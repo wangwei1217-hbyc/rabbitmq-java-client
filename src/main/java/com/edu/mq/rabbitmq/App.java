@@ -78,8 +78,12 @@ public class App {
 //        channel.queueBindNoWait("wei.trace_queue", "wei.trace", "#.wei.trace.*", null);
 
         /**exchange 和 exchange绑定(可重复执行，不会重复绑定)**/
-        AMQP.Exchange.BindOk bindExchangeOk = channel.exchangeBind("wei.trace", "wei.error", "error.trace");
-        System.out.println(bindExchangeOk);
+//        AMQP.Exchange.BindOk bindExchangeOk = channel.exchangeBind("wei.trace", "wei.error", "error.trace");
+//        System.out.println(bindExchangeOk);
+
+        /**exchange和queue、exchange解绑(可重复执行)*/
+        channel.queueUnbind("wei.info_queue", "wei.error", "#.wei.error.#", null);
+        channel.exchangeUnbind("wei.trace", "wei.error", "error.trace");
 
 //        TimeUnit.SECONDS.sleep(10);
         channel.close();
