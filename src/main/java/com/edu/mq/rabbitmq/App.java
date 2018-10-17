@@ -10,7 +10,8 @@ import java.util.concurrent.TimeUnit;
 public class App {
     public static void main(String[] args) throws Exception{
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("192.168.71.128");
+//        factory.setHost("192.168.71.128");
+        factory.setHost("192.168.74.128");
         factory.setPort(5672);
         factory.setUsername("wangwei");
         factory.setPassword("wangwei");
@@ -82,8 +83,10 @@ public class App {
 //        System.out.println(bindExchangeOk);
 
         /**exchange和queue、exchange解绑(可重复执行)*/
-        channel.queueUnbind("wei.info_queue", "wei.error", "#.wei.error.#", null);
-        channel.exchangeUnbind("wei.trace", "wei.error", "error.trace");
+//        channel.queueUnbind("wei.info_queue", "wei.error", "#.wei.error.#", null);
+//        AMQP.Queue.UnbindOk unbindOk = channel.queueUnbind("user.log.queue", "log", "user.log.#");
+//        System.out.println(unbindOk);
+//        channel.exchangeUnbind("wei.trace", "wei.error", "error.trace");
 
 //        TimeUnit.SECONDS.sleep(10);
         channel.close();
