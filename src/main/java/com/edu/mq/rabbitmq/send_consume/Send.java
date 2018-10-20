@@ -17,13 +17,15 @@ public class Send {
 //        factory.setVirtualHost("/");
 
         /**第二种*/
-        factory.setUsername("wangwei");
-        factory.setPassword("wangwei");
-        factory.setUri("amqp://192.168.74.128:5672");
+//        factory.setUsername("wangwei");
+//        factory.setPassword("wangwei");
+//        factory.setUri("amqp://192.168.74.128:5672");
 //        factory.setUri("amqps://192.168.74.128:5672");//SSL
 
         /**第三种*/
-//        factory.setUri("amqp://wangwei:wangwei@192.168.74.128:5672");
+//        factory.setUri("amqp://wangwei:wangwei@192.168.71.128:5672");
+        //vLog-指定的VirtualHost
+        factory.setUri("amqp://wangwei:wangwei@192.168.71.128:5672/vLog");
 //        factory.setUri("amqps://wangwei:wangwei@192.168.74.128:5672");
 
         Connection connection = factory.newConnection();
@@ -33,7 +35,9 @@ public class Send {
         //""-默认exchange
 //        channel.basicPublish("","debug",props,"忘记密码，验证码654321。".getBytes());
 //        channel.basicPublish("login","login",props,"登录校验".getBytes());
-        channel.basicPublish("log","action.log",props,"项羽虞姬".getBytes());
+//        channel.basicPublish("log","action.log",props,"项羽虞姬".getBytes());
+//        channel.basicPublish("wei.debug","wei.debug",props,"海棠未眠".getBytes());
+        channel.basicPublish("log","log",props,"岁月静好".getBytes());
 
         System.out.println("============>over<===========");
         channel.close();
