@@ -22,9 +22,9 @@ public class Consume {
 //        factory.setPassword("wangwei");
 //        factory.setVirtualHost("/");
 
-        factory.setUri("amqp://wangwei:wangwei@192.168.71.128:5672");
+        factory.setUri("amqp://wangwei:wangwei@192.168.236.128:5672");
         //vLog-指定的VirtualHost
-//        factory.setUri("amqp://wangwei:wangwei@192.168.71.128:5672/vLog");
+//        factory.setUri("amqp://wangwei:wangwei@192.168.236.128:5672/vLog");
 
         /*
         指定Connection的Client properties.在原来的参数集合基础上追加自定义属性
