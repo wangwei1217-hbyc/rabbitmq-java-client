@@ -34,9 +34,9 @@ public class App {
         第四个参数autoDelete:  true-当最后一个绑定被删除后，该exchange自动被删除
         第五个参数internal:是否是内部专用exchange，true-就意味着我们不能往该exchange里面发送消息
          */
-//        AMQP.Exchange.DeclareOk weiErrorOk = channel.exchangeDeclare("wei.error", BuiltinExchangeType.TOPIC,
-//                true, false, false, null);
-//        System.out.println(weiErrorOk);
+        AMQP.Exchange.DeclareOk weiErrorOk = channel.exchangeDeclare("wei.error", BuiltinExchangeType.TOPIC,
+                true, false, false, null);
+        System.out.println(weiErrorOk);
 
         //第五个参数arguments:map格式的参数
 //        Map<String,Object> arguments = new HashMap<>();
